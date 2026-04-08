@@ -1,4 +1,7 @@
 import SearchForm from "./components/SearchForm";
+import Results from "./results/page";
+
+
 
 //Search page
 export default function Home() {

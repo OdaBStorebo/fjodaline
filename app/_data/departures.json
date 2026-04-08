@@ -1,0 +1,122 @@
+[
+  {
+    "id": "bst-2026-04-09-0800",
+    "from": "Bergen",
+    "to": "Stavanger",
+    "date": "2026-04-09",
+    "departureTime": "08:00",
+    "durationMinutes": 330,
+    "price": 599,
+    "currency": "NOK"
+  },
+  {
+    "id": "bst-2026-04-09-1430",
+    "from": "Bergen",
+    "to": "Stavanger",
+    "date": "2026-04-09",
+    "departureTime": "14:30",
+    "durationMinutes": 330,
+    "price": 649,
+    "currency": "NOK"
+  },
+  {
+    "id": "bst-2026-04-10-0900",
+    "from": "Bergen",
+    "to": "Stavanger",
+    "date": "2026-04-10",
+    "departureTime": "09:00",
+    "durationMinutes": 330,
+    "price": 619,
+    "currency": "NOK"
+  },
+  {
+    "id": "bst-2026-04-10-1700",
+    "from": "Bergen",
+    "to": "Stavanger",
+    "date": "2026-04-10",
+    "departureTime": "17:00",
+    "durationMinutes": 330,
+    "price": 689,
+    "currency": "NOK"
+  },
+  {
+    "id": "bst-2026-04-11-0730",
+    "from": "Bergen",
+    "to": "Stavanger",
+    "date": "2026-04-11",
+    "departureTime": "07:30",
+    "durationMinutes": 330,
+    "price": 579,
+    "currency": "NOK"
+  },
+  {
+    "id": "bst-2026-04-11-1530",
+    "from": "Bergen",
+    "to": "Stavanger",
+    "date": "2026-04-11",
+    "departureTime": "15:30",
+    "durationMinutes": 330,
+    "price": 659,
+    "currency": "NOK"
+  },
+  {
+    "id": "bhi-2026-04-09-1000",
+    "from": "Bergen",
+    "to": "Hirtshals",
+    "date": "2026-04-09",
+    "departureTime": "10:00",
+    "durationMinutes": 510,
+    "price": 899,
+    "currency": "NOK"
+  },
+  {
+    "id": "bhi-2026-04-09-2200",
+    "from": "Bergen",
+    "to": "Hirtshals",
+    "date": "2026-04-09",
+    "departureTime": "22:00",
+    "durationMinutes": 510,
+    "price": 949,
+    "currency": "NOK"
+  },
+  {
+    "id": "bhi-2026-04-10-1100",
+    "from": "Bergen",
+    "to": "Hirtshals",
+    "date": "2026-04-10",
+    "departureTime": "11:00",
+    "durationMinutes": 510,
+    "price": 919,
+    "currency": "NOK"
+  },
+  {
+    "id": "bhi-2026-04-10-2100",
+    "from": "Bergen",
+    "to": "Hirtshals",
+    "date": "2026-04-10",
+    "departureTime": "21:00",
+    "durationMinutes": 510,
+    "price": 969,
+    "currency": "NOK"
+  },
+  {
+    "id": "bhi-2026-04-11-0930",
+    "from": "Bergen",
+    "to": "Hirtshals",
+    "date": "2026-04-11",
+    "departureTime": "09:30",
+    "durationMinutes": 510,
+    "price": 889,
+    "currency": "NOK"
+  },
+  {
+    "id": "bhi-2026-04-11-2000",
+    "from": "Bergen",
+    "to": "Hirtshals",
+    "date": "2026-04-11",
+    "departureTime": "20:00",
+    "durationMinutes": 510,
+    "price": 959,
+    "currency": "NOK"
+  }
+]
