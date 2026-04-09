@@ -2,6 +2,7 @@
 import { useSearchParams } from "next/navigation";
 import {useEffect, useState } from "react";
 import DepartureList from "./../components/DepartureList";
+import styles from "./Results.module.css"
 
 //Search results page
 export default function Results() {
@@ -33,9 +34,9 @@ export default function Results() {
     }, [from, to, date]);
 
     return(
-        <div>
-            <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-                <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
+        <div className={styles.page}>
+            <main className={styles.results}>
+                <div className={styles.resultsContent}>
                     <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
                         Tilgjenglige reiser
                     </h1>

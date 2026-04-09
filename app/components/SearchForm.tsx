@@ -1,5 +1,6 @@
 'use client';
 import React, {useState, useEffect} from "react";
+import Select from "react-select";
 import { useRouter } from "next/navigation";
 import buttonStyles from "./Button.module.css";
 import styles from "./SearchForm.module.css";
@@ -40,30 +41,29 @@ export default function SearchForm() {
             router.push(`/results?from=${from}&to=${to}&date=${date}`);
         };
 
+        const departureOptionsForSelect = departureOptions.map((option) => ({ value: option, label: option }));
+        const destinationOptionsForSelect = destinationOptions.map((option) => ({ value: option, label: option }));
+
   return (
     <div className={styles.formDiv}>
         <form onSubmit={handleSubmit} className={styles.form}>
             {/*Departure*/}
             <label htmlFor="from">From:</label>
-            <select value={from} onChange={(e) => setFrom(e.target.value)}>
-                <option value="">Velg avgang</option>
-                {departureOptions.map((option) => (
-                    <option key={option} value={option}>
-                        {option}
-                    </option>
-                ))}
-            </select>
+            <Select instanceId="from-select" className={styles.selectOptions} placeholder="Reise fra"
+                value={departureOptionsForSelect.find((option) => option.value === from) || null } 
+                options={departureOptionsForSelect} 
+                isSearchable={true} 
+                onChange={(selectedOption) => setFrom(selectedOption ? selectedOption.value : "")}>
+            </Select>
 
             {/*Destination*/}
             <label htmlFor="to">To:</label>
-            <select value={to} onChange={(e) => setTo(e.target.value)}>
-                <option value="">Velg destinasjon</option>
-                {destinationOptions.map((option) => (
-                    <option key={option} value={option}>
-                        {option}
-                    </option>
-                ))}
-            </select>
+            <Select instanceId="to-select" className={styles.selectOptions} placeholder="Reise til"
+                value={destinationOptionsForSelect.find((option) => option.value === to) || null } 
+                options={destinationOptionsForSelect}
+                isSearchable={true}
+                onChange={(selectedOption) => setTo(selectedOption ? selectedOption.value : "")}>
+            </Select>
 
             {/*Date*/}
             <label htmlFor="date">Date:</label>
@@ -71,7 +71,7 @@ export default function SearchForm() {
                 type="date"
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
-                className="bg-white text-black placeholder:text-zinc-500 border border-zinc-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className={styles.dateInput}
             />
 
             <button type="submit" className={buttonStyles.button}>
