@@ -1,6 +1,9 @@
-"use client";
+'use client';
 import React, {useState, useEffect} from "react";
 import { useRouter } from "next/navigation";
+import buttonStyles from "./Button.module.css";
+import styles from "./SearchForm.module.css";
+
 
 export default function SearchForm() {
     const router = useRouter();
@@ -38,8 +41,8 @@ export default function SearchForm() {
         };
 
   return (
-    <div className="SearchFormModule">
-        <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+    <div className={styles.formDiv}>
+        <form onSubmit={handleSubmit} className={styles.form}>
             {/*Departure*/}
             <label htmlFor="from">From:</label>
             <select value={from} onChange={(e) => setFrom(e.target.value)}>
@@ -71,11 +74,10 @@ export default function SearchForm() {
                 className="bg-white text-black placeholder:text-zinc-500 border border-zinc-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
 
-      <button
-        type="submit" className="bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-        Search
-      </button>
-    </form>
+            <button type="submit" className={buttonStyles.button}>
+                Search
+            </button>
+        </form>
     </div>
   );
 }

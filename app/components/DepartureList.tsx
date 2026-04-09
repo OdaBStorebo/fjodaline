@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import DepartureCard from "./DepartureCard";
+import styles from "./Button.module.css";
 
 export default function DepartureList( {departures}: any) {
     const router = useRouter();
@@ -10,9 +11,8 @@ export default function DepartureList( {departures}: any) {
         return (
             <div>
                 <p>Ingen tilgjenglige reiser er funnet</p>
-                <button type="button" className="bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" 
-                onClick={() => router.push("/")}>
-                    Gå tilbake til søk
+                <button type="button" className={styles.button} onClick={() => router.push("/")}>
+                    Tilbake til søk
                 </button>
             </div>
         );

@@ -1,0 +1,16 @@
+.button {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 2rem; 
+    font-weight: 700; 
+    color: #ffffff; 
+    background-color: rgb(255, 0, 0); 
+}
+
+.button:hover {
+    background-color: rgb(190, 0, 0); 
+    font-weight: 800;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}

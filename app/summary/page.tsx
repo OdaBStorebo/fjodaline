@@ -12,7 +12,9 @@ export default function Summary() {
     const date = searchParams.get("date");
     const departureTime = searchParams.get("departureTime");
     const durationTime = searchParams.get("durationTime");
+    const arrivalTime = searchParams.get("arrivalTime");
     const price = searchParams.get("price");
+    const currency = searchParams.get("currency");
     
     return(
         <div>
@@ -24,8 +26,9 @@ export default function Summary() {
                     <p><strong>Fra:</strong> {from}<strong> Til:</strong> {to}</p>
                     <p><strong>Dato:</strong> {date}</p>
                     <p><strong>Avgangstid:</strong> {departureTime}</p>
-                    <p><strong>Reisetid: </strong>{durationTime} min</p>
-                    <p><strong>Pris:</strong> {price} NOK</p>
+                    <p><strong>Ankomsttid:</strong> {arrivalTime}</p>
+                    <p><strong>Reisetid: </strong> {durationTime} min</p>
+                    <p><strong>Pris:</strong> {price} {currency}</p>
                 </div>
             </main>
         </div>
