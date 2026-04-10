@@ -24,3 +24,13 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+h1 {
+  max-width: 20rem; 
+  font-size: 1.875rem;
+  line-height: 2.25rem; 
+  font-weight: 600; 
+  letter-spacing: -0.025em; 
+  line-height: 2.5rem; 
+  color: #000000; 
+}

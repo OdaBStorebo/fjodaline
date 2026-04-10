@@ -1,0 +1,44 @@
+.summary{
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.summaryContent {
+    position: relative;
+    display: flex; 
+    flex-direction: row; 
+    gap: 1.5rem; 
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow:2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.destinationInfo, .date, .timeInfo, .additionalInfo {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.priceInfo {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 2rem;
+    display: flex;
+    flex-direction: column;
+    color: #ef4444;
+    font-size: large;
+    font-weight: 800;
+}

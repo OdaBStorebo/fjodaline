@@ -9,7 +9,7 @@ export default function Home() {
     <div className={styles.page}>
       <main className={styles.main}>
         <div className={styles.mainContent}>
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
+          <h1>
             Fjodaline Bookings
           </h1>
           <SearchForm />

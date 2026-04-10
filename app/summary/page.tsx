@@ -2,6 +2,7 @@
 'use client';
 
 import { useSearchParams } from "next/navigation";
+import styles from "./Summary.module.css";
 
 export default function Summary() {
     const searchParams = useSearchParams();
@@ -10,6 +11,7 @@ export default function Summary() {
     const from = searchParams.get("from");
     const to = searchParams.get("to");
     const date = searchParams.get("date");
+    const arrivalDate = searchParams.get("arrivalDate");
     const departureTime = searchParams.get("departureTime");
     const durationTime = searchParams.get("durationTime");
     const arrivalTime = searchParams.get("arrivalTime");
@@ -17,19 +19,31 @@ export default function Summary() {
     const currency = searchParams.get("currency");
     
     return(
-        <div>
-            <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-                <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-                    <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-                        Reiseoppsummering
-                    </h1>
-                    <p><strong>Fra:</strong> {from}<strong> Til:</strong> {to}</p>
-                    <p><strong>Dato:</strong> {date}</p>
-                    <p><strong>Avgangstid:</strong> {departureTime}</p>
-                    <p><strong>Ankomsttid:</strong> {arrivalTime}</p>
-                    <p><strong>Reisetid: </strong> {durationTime} min</p>
-                    <p><strong>Pris:</strong> {price} {currency}</p>
+        <div className={styles.summary}>
+            <main className={styles.main}>
+                <h1>Reiseoppsummering</h1>
+                <div className={styles.summaryContent}>
+                    <div className={styles.destinationInfo}>
+                        <p><strong>Fra</strong><br></br> {from}</p>
+                        <p><strong> Til</strong><br></br> {to}</p>
+                    </div> 
+                    <div className={styles.date}>
+                        <p><strong>Avreisedato</strong><br></br> {date}</p>
+                        <p><strong>Ankomstdato</strong><br></br> {arrivalDate}</p>
+                    </div>
+                    <div className={styles.timeInfo}>
+                        <p><strong>Avgangstid</strong><br></br> {departureTime}</p>
+                        <p><strong>Ankomsttid</strong><br></br> {arrivalTime}</p>
+                    </div>
+                    <div className={styles.additionalInfo}>
+                        <p><strong>Reisetid </strong><br></br> {durationTime} min</p>
+                        <p><strong>Nattavgang</strong><br></br>ja nei</p>
+                    </div>
+                    <div className={styles.priceInfo}>
+                        <p><strong>Totalpris</strong> {price} {currency}</p>
+                    </div>
                 </div>
+                
             </main>
         </div>
     )
