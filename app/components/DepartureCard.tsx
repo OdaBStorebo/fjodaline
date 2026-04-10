@@ -8,7 +8,12 @@ export default function DepartureCard({ departure }: any) {
     const router = useRouter();
 
     const handleSelect = () => {
-        router.push(`/summary?id=${departure.id}&from=${departure.from}&to=${departure.to}&date=${departure.date}&departureTime=${departure.departureTime}&durationTime=${departure.durationMinutes}&arrivalTime=${departure.arrivalTime}&price=${departure.price}&currency=${departure.currency}`);
+        router.push(`/summary?id=${departure.id}
+            &from=${departure.from}
+            &to=${departure.to}
+            &date=${departure.date}
+            &arrivalDate=${departure.arrivalDate}
+            &departureTime=${departure.departureTime}&durationTime=${departure.durationMinutes}&arrivalTime=${departure.arrivalTime}&price=${departure.price}&currency=${departure.currency}`);
     }
     return (
         <div className={styles.departureCard}>
@@ -17,10 +22,19 @@ export default function DepartureCard({ departure }: any) {
                     {departure.isOvernight && <span>Natt</span>}
                 </div>
                     <div className={styles.travelInfo}>
-                        <p><strong>Dato:</strong> {departure.date}</p>
-                        <p><strong>Fra:</strong> {departure.from}<strong> Til:</strong> {departure.to}</p>
-                        <p><strong>Avgangstid:</strong> {departure.departureTime}<strong> Ankomsttid:</strong> {departure.arrivalTime}</p>
-                        <p><strong>Reisetid: </strong>{departure.durationMinutes} min</p>
+                        <div className={styles.departureInfo}>
+                            <p>{departure.departureTime}</p>
+                            <p><strong>Fra:</strong> {departure.from}</p>
+                            <p>{departure.date}</p>
+                        </div>
+                        <div className={styles.duration}>
+                            <p>{departure.durationMinutes} min</p>
+                        </div>
+                        <div className={styles.arrivalInfo}>
+                            <p>{departure.arrivalTime}</p>
+                            <p><strong> Til:</strong> {departure.to}</p>
+                            <p>{departure.arrivalDate}</p>
+                        </div>
                     </div>
                 </div>
             <div className={styles.cardPrice}>
