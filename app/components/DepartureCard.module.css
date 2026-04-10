@@ -1,0 +1,60 @@
+.departureCard {
+    display: flex;
+    flex-direction: row;
+    position:relative;
+    margin-bottom: 1rem;
+    border-radius: 0.7rem;
+    box-shadow: 0 1px 3px 0 rgb(0,0,0,0.1), 0 1px 2px 0 rgb(0,0,0,0.06);
+    background-color: white;
+}
+
+.cardPrice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0.5rem 1rem 0.5rem;
+    margin-left: 1rem;
+    border-radius: 0rem 0.4rem 0.4rem 0rem;
+    border-left: 1px solid rgb(0,0,0,0.1);
+    background-color: none;
+    color: #ef4444;
+    font-size: large;
+    font-weight: 800;
+}
+
+.departureCard:hover {
+    border: 2px solid #ef4444;
+
+    .cardPrice{
+        background-color: #ef4444;
+        color: white;
+        font-weight: 700;
+    }
+
+    .nightDeparture {
+        background-color: #ef4444;
+        color: white;
+    }
+}
+
+.travelInfo {
+    padding: 1rem;
+}
+
+.nightDeparture {
+    position:absolute;
+    bottom: 0;
+    transform: translate(-50%,50%);
+    left: 50%;
+    border-radius: 9999px;
+    border: 2px solid #ef4444;
+    width: min-content;
+    background-color: white;
+    color: #ef4444;
+    box-shadow: 0 1px 3px 0 rgb(0,0,0,0.1), 0 1px 2px 0 rgb(0,0,0,0.06);
+}
+
+.nightDeparture span {
+    padding: 0.5rem;
+    font-weight: 600;
+}
