@@ -1,22 +1,23 @@
 'use client';
 
 import { useRouter } from "next/navigation";
-import buttonStyles from "./Button.module.css";
 import styles from "./DepartureCard.module.css";
 
-export default function DepartureCard({ departure }: any) {
+export default function DepartureCard({ departure, isSelected, onSelect }: any) {
     const router = useRouter();
 
-    const handleSelect = () => {
-        router.push(`/summary?id=${departure.id}
-            &from=${departure.from}
-            &to=${departure.to}
-            &date=${departure.date}
-            &arrivalDate=${departure.arrivalDate}
-            &departureTime=${departure.departureTime}&durationTime=${departure.durationMinutes}&arrivalTime=${departure.arrivalTime}&price=${departure.price}&currency=${departure.currency}`);
-    }
+    
     return (
-        <div className={styles.departureCard}>
+        <div className={`${styles.departureCard} ${isSelected ? styles.selectedCard : ''}`}
+            onClick={onSelect}
+            role="button"
+            tabIndex={0}
+            onKeyUp={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                    onSelect();
+                }
+            }}
+        >
             <div>
                 {departure.isOvernight && (
                     <div className={styles.nightDeparture}>
@@ -40,10 +41,7 @@ export default function DepartureCard({ departure }: any) {
                     </div>
                 </div>
             <div className={styles.cardPrice}>
-                <p>{departure.price} {departure.currency}</p>
-                <button type="button" onClick={handleSelect} className={buttonStyles.button}>
-                    Velg reise
-                </button>
+                <p>{departure.price} {departure.currency}</p>               
             </div>
         </div>
     );
