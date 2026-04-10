@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import DepartureCard from "./DepartureCard";
+import styles from "./DepartureList.module.css";
 import buttonStyles from "./Button.module.css";
 import { useState } from "react";
 
@@ -38,13 +39,15 @@ export default function DepartureList( {departures}: any) {
     }
 
     return (
-        <div>
+        <div className={styles.departureList}>
             {departures.map((departure: any) => (
                 <DepartureCard key={departure.id} departure={departure} isSelected={selectedDeparture?.id === departure.id} onSelect={() => setSelectedDeparture(departure)} />
             ))}
-            <button type="button" onClick={handleSelect} disabled={!selectedDeparture} className={buttonStyles.button}>
-                Velg reise
-            </button>
+            <div className={styles.buttonContainer}>
+                <button type="button" onClick={handleSelect} disabled={!selectedDeparture} className={`${buttonStyles.button} ${styles.button}`}>
+                    Velg reise
+                </button>
+            </div>
         </div>
     );
 }

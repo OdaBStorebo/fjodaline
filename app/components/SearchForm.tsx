@@ -75,7 +75,7 @@ export default function SearchForm() {
             />
 
             <button type="submit" className={buttonStyles.button}>
-                Search
+                Søk
             </button>
         </form>
     </div>

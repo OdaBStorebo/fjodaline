@@ -37,7 +37,7 @@ export default function Results() {
         <div className={styles.page}>
             <main className={styles.results}>
                 <div className={styles.resultsContent}>
-                    <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
+                    <h1>
                         Tilgjenglige reiser
                     </h1>
                     <DepartureList departures={results} />
