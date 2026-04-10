@@ -18,22 +18,22 @@
     border-radius: 0rem 0.4rem 0.4rem 0rem;
     border-left: 1px solid rgb(0,0,0,0.1);
     background-color: none;
-    color: #ef4444;
+    color: var(--primary-color);
     font-size: large;
     font-weight: 800;
 }
 
 .departureCard:hover, .selectedCard {
-    border: 2px solid #ef4444;
+    border: 2px solid var(--primary-color);
 
     .cardPrice{
-        background-color: #ef4444;
+        background-color: var(--primary-color);
         color: white;
         font-weight: 700;
     }
 
     .nightDeparture {
-        background-color: #ef4444;
+        background-color: rgb(14, 46, 84);
         color: white;
     }
 }
@@ -57,15 +57,15 @@
 
 .nightDeparture {
     position:absolute;
-    bottom: 0;
-    transform: translate(-50%,50%);
-    left: 50%;
+    top: 0;
+    transform: translate(-50%,-30%);
+    right: -6.2%;
     padding: 0 0.5rem 0 0.5rem;
     font-weight: 600;
     border-radius: 9999px;
-    border: 2px solid #ef4444;
+    border: 2px solid rgb(14, 46, 84);
     width: min-content;
-    background-color: white;
-    color: #ef4444;
+    background-color: rgb(14, 46, 84);
+    color: white;
     box-shadow: 0 1px 3px 0 rgb(0,0,0,0.1), 0 1px 2px 0 rgb(0,0,0,0.06);
 }

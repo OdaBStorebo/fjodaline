@@ -38,7 +38,7 @@
     right: 2rem;
     display: flex;
     flex-direction: column;
-    color: #ef4444;
+    color: var(--primary-color);
     font-size: large;
     font-weight: 800;
 }

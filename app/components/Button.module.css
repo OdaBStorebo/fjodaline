@@ -4,11 +4,11 @@
     border-radius: 2rem; 
     font-weight: 700; 
     color: #ffffff; 
-    background-color: rgb(255, 0, 0); 
+    background-color: var(--primary-color); 
 }
 
 .button:hover {
-    background-color: rgb(190, 0, 0); 
+    background-color: var(--secondary-color); 
     font-weight: 800;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }

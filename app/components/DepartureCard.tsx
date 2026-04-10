@@ -5,7 +5,6 @@ import styles from "./DepartureCard.module.css";
 
 export default function DepartureCard({ departure, isSelected, onSelect }: any) {
     const router = useRouter();
-
     
     return (
         <div className={`${styles.departureCard} ${isSelected ? styles.selectedCard : ''}`}
