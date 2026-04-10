@@ -18,9 +18,11 @@ export default function DepartureCard({ departure }: any) {
     return (
         <div className={styles.departureCard}>
             <div>
-                <div className={styles.nightDeparture}>
-                    {departure.isOvernight && <span>Natt</span>}
-                </div>
+                {departure.isOvernight && (
+                    <div className={styles.nightDeparture}>
+                        Natt
+                    </div>
+                )}
                     <div className={styles.travelInfo}>
                         <div className={styles.departureInfo}>
                             <p>{departure.departureTime}</p>
