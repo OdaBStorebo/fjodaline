@@ -2,6 +2,8 @@
 'use client';
 
 import { useSearchParams } from "next/navigation";
+import { showDurationTime } from "../utils/formatDuration";
+import { formatDate } from "../utils/formatDate";
 import styles from "./Summary.module.css";
 
 export default function Summary() {
@@ -28,15 +30,15 @@ export default function Summary() {
                         <p><strong> Til</strong><br></br> {to}</p>
                     </div> 
                     <div className={styles.date}>
-                        <p><strong>Avreisedato</strong><br></br> {date}</p>
-                        <p><strong>Ankomstdato</strong><br></br> {arrivalDate}</p>
+                        <p><strong>Avreisedato</strong><br></br> {formatDate(date)}</p>
+                        <p><strong>Ankomstdato</strong><br></br> {formatDate(arrivalDate)}</p>
                     </div>
                     <div className={styles.timeInfo}>
                         <p><strong>Avgangstid</strong><br></br> {departureTime}</p>
                         <p><strong>Ankomsttid</strong><br></br> {arrivalTime}</p>
                     </div>
                     <div className={styles.additionalInfo}>
-                        <p><strong>Reisetid </strong><br></br> {durationTime} min</p>
+                        <p><strong>Reisetid </strong><br></br> {showDurationTime(durationTime)}</p>
                         <p><strong>Nattavgang</strong><br></br>ja nei</p>
                     </div>
                     <div className={styles.priceInfo}>

@@ -1,5 +1,5 @@
 .page {
-    display:block;
+    display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -21,4 +21,5 @@
     justify-content: center;
     gap: 2rem;
     text-align: center;
+    width: 100%;
 }

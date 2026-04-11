@@ -13,10 +13,7 @@ export default function DepartureList( {departures}: any) {
     if(!departures || departures.length === 0) {
         return (
             <div>
-                <p>Ingen tilgjenglige reiser er funnet</p>
-                <button type="button" className={buttonStyles.button} onClick={() => router.push("/")}>
-                    Gå tilbake til søk
-                </button>
+                <p>Ingen tilgjenglige reiser er funnet!<br></br>Velg en ny reise</p>
             </div>
         );
     }
@@ -25,16 +22,16 @@ export default function DepartureList( {departures}: any) {
         if (!selectedDeparture) return;
 
         router.push(
-            `/summary?id=${selectedDeparture.id} +
-            &from=${selectedDeparture.from} +
-            &to=${selectedDeparture.to} +
-            &date=${selectedDeparture.date} +
-            &arrivalDate=${selectedDeparture.arrivalDate} +
-            &departureTime=${selectedDeparture.departureTime} +
-            &durationTime=${selectedDeparture.durationMinutes} +
-            &arrivalTime=${selectedDeparture.arrivalTime} +
-            &price=${selectedDeparture.price} +
-            &currency=${selectedDeparture.currency}`
+            `/summary?id=${selectedDeparture.id}` +
+            `&from=${selectedDeparture.from}` +
+            `&to=${selectedDeparture.to}` +
+            `&date=${selectedDeparture.date}` +
+            `&arrivalDate=${selectedDeparture.arrivalDate}` +
+            `&departureTime=${selectedDeparture.departureTime}` +
+            `&durationTime=${selectedDeparture.durationMinutes}` +
+            `&arrivalTime=${selectedDeparture.arrivalTime}` +
+            `&price=${selectedDeparture.price}` +
+            `&currency=${selectedDeparture.currency}`
         );
     }
 
