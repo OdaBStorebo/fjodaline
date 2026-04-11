@@ -1,7 +1,6 @@
 .departureList {
   display: flex;
   flex-direction: column;
-  
 }
 
 .buttonContainer {

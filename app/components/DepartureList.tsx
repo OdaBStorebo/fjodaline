@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import DepartureCard from "./DepartureCard";
 import styles from "./DepartureList.module.css";
 import buttonStyles from "./Button.module.css";
-import { useState } from "react";
+import { useState, useEffect} from "react";
 
 export default function DepartureList( {departures}: any) {
     const router = useRouter();
@@ -17,6 +17,11 @@ export default function DepartureList( {departures}: any) {
             </div>
         );
     }
+    
+    {/*reset "Velg reise" state*/}
+    useEffect(() =>{
+        setSelectedDeparture(null);
+    },[departures]);
 
     const handleSelect = () => {
         if (!selectedDeparture) return;
