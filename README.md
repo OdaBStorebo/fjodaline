@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Problemløsning og valg
 
-## Getting Started
+I dette prosjektet har jeg laget en enkel bookingflyt for fergeavganger, der brukeren kan velge avreisested, destinasjon og dato, og deretter velge en spesifikk avgang.
 
-First, run the development server:
+Utviklingen startet med en løsning bestående av tre sider: en søkeside, en resultatside og en oppsummeringsside. Da oppsettet ikke tok så lang tid som forventet, valgte jeg å flytte søkeresultatene til samme side som søket. Dette ga en mer sømløs brukeropplevelse og gjorde løsningen enklere å håndtere.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Jeg valgte også å lage en egen `DatePicker`-komponent ved bruk av `react-day-picker`, etter å ha prøvd flere alternative løsninger. Dette gjorde det mulig å begrense hvilke datoer brukeren kan velge basert på tilgjengelige avganger og om datoen er passert.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Jeg har også lagt vekt på å gjøre avgangene så lesbare som mulig ved å formatere datoer og reisetid. Det er kun mulig å velge én avgang om gangen, og det er tydelig hvilken avgang som er valgt. Valget resettes også når et nytt søk gjennomføres.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Utfordringer
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Den største utfordringen gjennom prosjektet var at jeg valgte å ikke bruke typer, da jeg vurderte det som et lite prosjekt. Dette førte til at enkelte feil, som feil prop-navn og udefinerte verdier, ikke ble fanget opp tidlig i utviklingen og var vanskeligere å feilsøke.
 
-## Learn More
+I tillegg var håndtering av datoer utfordrende, spesielt å sikre at datoformatet var likt mellom kalenderkomponenten og datasettet. Dette skyldtes blant annet at jeg testet flere ulike løsninger underveis.
 
-To learn more about Next.js, take a look at the following resources:
+## Videreutvikling
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Dette er funksjonalitet jeg ville forbedret med mer tid:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+* **Bruk av typer**
+  Dette ville gjort utviklingen mer robust og gjort det enklere å oppdage feil tidlig
 
-## Deploy on Vercel
+* **Forbedret validering i SearchForm**
+  Deaktivere søkeknappen dersom ikke alle felt er fylt ut
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* **Valg av avgang i søkeresultat**
+  Det er per nå ikke mulig å "unselecte" en avgang ved å klikke på den igjen
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+* **Navigasjon**
+  Legge til tilbakeknapp fra oppsummeringssiden til søket
+
+* **Nattavganger**
+  Lagt til visning av nattavgang på resultatside og mulighet for å filtrere på dag- og nattavganger
+
+* **Passasjer- og kjøretøyvalg**
+  Mulighet for å legge til passasjerer (navn, antall) og valg av kjøretøy
+
